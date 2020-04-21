@@ -18,7 +18,7 @@ public class BatchConfiguration {
         BookingService bookingService;
 
         @Scheduled(cron = "0 5 * * * *") // everyday at  5 am
-        public void checkReturnDate() throws MessagingException {
+        public void checkReturnDate()  {
             try {
                List<Booking> bookingList = bookingService.findAllByStatus();
                bookingService.checkDate(bookingList);
